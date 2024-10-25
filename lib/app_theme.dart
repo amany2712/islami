@@ -13,13 +13,14 @@ static ThemeData lightTheme = ThemeData(
  primaryColor: lightPrimary,
  scaffoldBackgroundColor: Colors.transparent,
   appBarTheme: AppBarTheme(
+    iconTheme: IconThemeData(color: Colors.black),
     centerTitle: true,
     titleTextStyle: TextStyle(
       fontSize: 30, 
       fontWeight: FontWeight.bold,color:Colors.black,
     ),
-    backgroundColor: Colors.transparent
-
+    backgroundColor: Colors.transparent,
+    elevation: 0,
    ),
  bottomNavigationBarTheme: BottomNavigationBarThemeData(
     backgroundColor: lightPrimary,    
@@ -27,7 +28,24 @@ static ThemeData lightTheme = ThemeData(
     unselectedItemColor: white,
     type:BottomNavigationBarType.fixed,
 
+  ),
+
+  //defines the styles for different levels of text used throughout the app.
+  textTheme: TextTheme(
+    headlineSmall: TextStyle(
+      fontSize: 25,
+      fontWeight: FontWeight.w400,
+      color: Colors.black
+      
+      ),
+    headlineLarge: TextStyle(
+      fontSize: 20,
+      fontWeight: FontWeight.w400,
+      color: Colors.black
+      
+      ),
   )
+  
 
 );
 static ThemeData darkTheme = ThemeData();
