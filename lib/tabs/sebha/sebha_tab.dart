@@ -1,10 +1,138 @@
 import 'package:flutter/material.dart';
 
-class sebhaTab extends StatelessWidget {
+class sebhaTab extends StatefulWidget {
+  @override
+  State<sebhaTab> createState() => _sebhaTabState();
+}
+
+class _sebhaTabState extends State<sebhaTab> {
+   int counter = 0; //  Number of Tasbeehs
+  String tasbeehText = 'سبحان الله'; //   Current text of the tasbih
+  double _rotationAngle = 0; //  Angle of rotation
+
   
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text("Sebha"),);
+    return Container(
+      child: Center(
+        child: Stack(
+          alignment: Alignment.topCenter, 
+          children: [
+            Positioned(
+              top: 0, //  Adjust the image position at the top.    
+              child: Image.asset(
+                'assets/images/head_sebha_logo.png',
+    
+    
+              ),
+            ),
+
+            Positioned(
+              top: 73.6, // Adjust the position of the body image below the head.     
+              child:GestureDetector ( 
+                onTap: _rotateAndIncrementCounter, // Call function to rotate image on click
+                  child: AnimatedRotation(
+                turns: _rotationAngle, // Each increment of 1 represents a full cycle.
+                duration: Duration(seconds: 1), // Recycle time
+                child: Image.asset(
+                  'assets/images/body_sebha_logo.png',
+                   
+                ),
+              ),
+            ),
+            ),
+
+            Positioned(
+              top: 350, // Edit this number to locate text below images.
+              child: Text(
+                'عدد التسبيحات',
+                style:  Theme.of(context).textTheme.headlineSmall,
+              ),
+            ),
+
+            Positioned(
+              top: 450,
+              child: Container(
+                 padding: EdgeInsets.symmetric(
+                  horizontal: MediaQuery.of(context).size.height * .02,
+                  vertical:  MediaQuery.of(context).size.height * .03,
+                  ),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color:Color.fromARGB(255, 195, 165, 124), 
+                  ),
+                child: Text(
+                  ' $counter', // Display counter value
+                  style: Theme.of(context).textTheme.headlineSmall,
+                ),
+              ),
+            ),
+            
+
+            Positioned(
+              top: 550, // Edit text position to display current text
+              child: Container(
+
+                padding: EdgeInsets.symmetric(
+                  horizontal: MediaQuery.of(context).size.height * .02,
+                  vertical:  MediaQuery.of(context).size.height * .01,
+                  ),
+
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(34),
+                  color: Theme.of(context).primaryColor,
+                  ),
+                
+                child: Text(
+                  tasbeehText,
+                  style: TextStyle(color: Color(0xffFFFFFF),
+                  fontSize: 25,
+                  fontWeight: FontWeight.w400,
+                 
+                  ),
+                  
+                ),
+              ),
+              
+              
+            ),
+
+            
+          ],
+        ),
+        
+        
+        
+        
+      ),
+      
+    );    
+   
+    
   }
+  void _rotateAndIncrementCounter() {
+    setState(() {
+      // Increase the rotation angle by 2 degrees.
+      _rotationAngle += 2/ 360; 
+
+      // Increment counter and update text based on counter value
+      counter++;
+      if (counter <= 33) {
+        tasbeehText = 'سبحان الله';
+      } else if (counter <= 66) {
+        tasbeehText = 'الحمد لله';
+      } else if (counter <= 99) {
+        tasbeehText = 'الله أكبر';
+      }
+
+      if (counter == 99) {
+        counter = 0;
+        tasbeehText = 'سبحان الله';
+      }
+    });
+  }
+  
+  
 }
+

@@ -35,7 +35,7 @@ static ThemeData lightTheme = ThemeData(
     headlineSmall: TextStyle(
       fontSize: 25,
       fontWeight: FontWeight.w400,
-      color: Colors.black
+      color: Color(0xff242424)
       
       ),
     headlineLarge: TextStyle(
