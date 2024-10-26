@@ -7,7 +7,7 @@ class sebhaTab extends StatefulWidget {
 
 class _sebhaTabState extends State<sebhaTab> {
    int counter = 0; //  Number of Tasbeehs
-  String tasbeehText = 'سبحان الله'; //   Current text of the tasbih
+  String TasbeehText = 'سبحان الله'; //   Current text of the tasbih
   double _rotationAngle = 0; //  Angle of rotation
 
   
@@ -85,7 +85,7 @@ class _sebhaTabState extends State<sebhaTab> {
                   ),
                 
                 child: Text(
-                  tasbeehText,
+                  TasbeehText,
                   style: TextStyle(color: Color(0xffFFFFFF),
                   fontSize: 25,
                   fontWeight: FontWeight.w400,
@@ -119,20 +119,19 @@ class _sebhaTabState extends State<sebhaTab> {
       // Increment counter and update text based on counter value
       counter++;
       if (counter <= 33) {
-        tasbeehText = 'سبحان الله';
+        TasbeehText = 'سبحان الله';
       } else if (counter <= 66) {
-        tasbeehText = 'الحمد لله';
+        TasbeehText = 'الحمد لله';
       } else if (counter <= 99) {
-        tasbeehText = 'الله أكبر';
+        TasbeehText = 'الله أكبر';
       }
 
       if (counter == 99) {
         counter = 0;
-        tasbeehText = 'سبحان الله';
+        TasbeehText = 'سبحان الله';
       }
     });
   }
   
   
 }
-
