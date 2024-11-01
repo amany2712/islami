@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:islami/app_theme.dart';
+import 'package:islami/tabs/settings/settings_provider.dart';
+import 'package:provider/provider.dart';
 
 class sebhaTab extends StatefulWidget {
   @override
@@ -14,6 +17,7 @@ class _sebhaTabState extends State<sebhaTab> {
 
   @override
   Widget build(BuildContext context) {
+     StettingsProvider settingsProvider = Provider.of<StettingsProvider>(context);
     return Container(
       child: Center(
         child: Stack(
@@ -22,7 +26,7 @@ class _sebhaTabState extends State<sebhaTab> {
             Positioned(
               top: 0, //  Adjust the image position at the top.    
               child: Image.asset(
-                'assets/images/head_sebha_logo.png',
+                'assets/images/${settingsProvider.imageNameHeadSebha}.png',
     
     
               ),
@@ -36,7 +40,7 @@ class _sebhaTabState extends State<sebhaTab> {
                 turns: _rotationAngle, // Each increment of 1 represents a full cycle.
                 duration: Duration(seconds: 1), // Recycle time
                 child: Image.asset(
-                  'assets/images/body_sebha_logo.png',
+                  'assets/images/${settingsProvider.imageNameBodySebha}.png',
                    
                 ),
               ),
@@ -60,7 +64,7 @@ class _sebhaTabState extends State<sebhaTab> {
                   ),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color:Color.fromARGB(255, 195, 165, 124), 
+                  color:settingsProvider.isDark ? AppTheme.darkPrimary : Color.fromARGB(255, 195, 165, 124), 
                   ),
                 child: Text(
                   ' $counter', // Display counter value

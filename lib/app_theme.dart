@@ -48,6 +48,48 @@ static ThemeData lightTheme = ThemeData(
   
 
 );
-static ThemeData darkTheme = ThemeData();
+
+//-----------------------dark mode------------------------------
+
+static ThemeData darkTheme = ThemeData(
+primaryColor: gold,
+ scaffoldBackgroundColor: Colors.transparent,
+  appBarTheme: AppBarTheme(
+    iconTheme: IconThemeData(color: Colors.white),
+    centerTitle: true,
+    titleTextStyle: TextStyle(
+      fontSize: 30, 
+      fontWeight: FontWeight.bold,color:Colors.white,
+    ),
+    backgroundColor: Colors.transparent,
+    elevation: 0,
+   ),
+ bottomNavigationBarTheme: BottomNavigationBarThemeData(
+    backgroundColor: darkPrimary,    
+   selectedItemColor: gold,
+    unselectedItemColor: white,
+    type:BottomNavigationBarType.fixed,
+
+  ),
+
+  //defines the styles for different levels of text used throughout the app.
+  textTheme: TextTheme(
+    headlineSmall: TextStyle(
+      fontSize: 25,
+      fontWeight: FontWeight.w400,
+      color: white
+      
+      ),
+    headlineLarge: TextStyle(
+      fontSize: 20,
+      fontWeight: FontWeight.w400,
+      color: gold
+      
+      ),
+  ),
+  
+  
+
+);
 
 }
