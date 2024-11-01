@@ -6,6 +6,7 @@ import 'package:islami/tabs/sebha/sebha_tab.dart';
 import 'package:islami/tabs/settings/settings_provider.dart';
 import 'package:islami/tabs/settings/settings_tab.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeScreen extends StatefulWidget {
   static const  String  routeName = '/home';
@@ -37,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       child: Scaffold(
         appBar: AppBar(
-          title: Text("إسلامي"),
+          title: Text(AppLocalizations.of(context)!.islami),
         ),
         body: tabs[currentIndex] ,
         bottomNavigationBar:BottomNavigationBar(
@@ -51,19 +52,19 @@ class _HomeScreenState extends State<HomeScreen> {
           items: [
             BottomNavigationBarItem(
               icon:ImageIcon( AssetImage('assets/images/quran.png')),
-              label: "Quran",
+              label: AppLocalizations.of(context)!.quran,
               ),
               BottomNavigationBarItem(
-              icon:ImageIcon( AssetImage('assets/images/hadeth.png')),label: "Hadeth",
+              icon:ImageIcon( AssetImage('assets/images/hadeth.png')),label: AppLocalizations.of(context)!.hadeth,
               ),
               BottomNavigationBarItem(
-              icon:ImageIcon( AssetImage('assets/images/sebha_blue.png')),label: "Sebha",
+              icon:ImageIcon( AssetImage('assets/images/sebha_blue.png')),label: AppLocalizations.of(context)!.sebha,
               ),
               BottomNavigationBarItem(
-              icon:ImageIcon( AssetImage('assets/images/radio_blue.png')),label: "Radio",
+              icon:ImageIcon( AssetImage('assets/images/radio_blue.png')),label: AppLocalizations.of(context)!.radio,
               ),
               BottomNavigationBarItem(
-              icon:Icon(Icons.settings_outlined),label: "Settings",
+              icon:Icon(Icons.settings_outlined),label: AppLocalizations.of(context)!.settings,
               ),
           ],
           ) ,

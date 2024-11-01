@@ -5,6 +5,7 @@ import 'package:islami/tabs/hadeth/hadeth_content_screen.dart';
 import 'package:islami/tabs/quran/sura_datails_screen.dart';
 import 'package:islami/tabs/settings/settings_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() {
   runApp(ChangeNotifierProvider(
@@ -28,6 +29,9 @@ void main() {
       theme:AppTheme.lightTheme ,
       darkTheme: AppTheme.darkTheme,
       themeMode:settingsProvider.themeMode,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+    locale: Locale(settingsProvider.languageCode),     //active locale
     );
   }
 }
