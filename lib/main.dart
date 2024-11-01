@@ -9,7 +9,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() {
   runApp(ChangeNotifierProvider(
-    create: (_)=> StettingsProvider(),         //object provider ..> make SettingsProvider (inherited widget) know IslamiApp 
+    create: (_)=> StettingsProvider()..getTheme()..getLanguage(),         //object provider ..> make SettingsProvider (inherited widget) know IslamiApp 
     child: IslamiApp()));
 }
  class IslamiApp extends StatelessWidget {
