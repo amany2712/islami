@@ -14,6 +14,10 @@ String get backgroundImageName => isDark ?  'dark_bg' :'bg3' ;        //We made 
 String get imageNameBodySebha => isDark ? 'body_sebha_dark' : 'body_sebha_logo';
 String get imageNameHeadSebha => isDark ? 'head_sebha_dark' : 'head_sebha_logo';
 
+String get imageNameRadio => isDark ? 'radoihead_dark' : 'radio_image';
+String get imageNameRadioIcon => isDark ? 'radio_dark' : 'radio';
+
+
 
 
 void changeTheme (ThemeMode selectedTheme){
